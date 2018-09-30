@@ -1,0 +1,1 @@
+# A-vim-like-firefox-like-configuration-for-w3m
