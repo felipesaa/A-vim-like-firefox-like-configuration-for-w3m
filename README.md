@@ -41,8 +41,8 @@
 	- /          = Enter find mode
         - n          = Find next
 	- N          = Find previous
-	- *          = OPTIONS
-	- +          = HELP
+	- \*         = OPTIONS
+	- \+         = HELP
 	- M-r        = Reload keymap configuration
 	- C-o        = Load local file
 	- C-u        = See source code of the page
