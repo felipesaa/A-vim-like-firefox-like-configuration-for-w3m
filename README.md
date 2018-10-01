@@ -49,11 +49,11 @@
 
 - This is just a part of the configuration, see the keymap file to see the
   complete list
-- see the functions.txt file to see the list of functions with its
-  descriptions
+- see in the documentation/functions.txt file to see the list of functions with
+  its descriptions
 
 - This configuration in order to work needs
-	- the keymap file in ~/w3m/keymap
-	- the cgi scripts in /usr/lib/w3m/cgi-bin
-	- the bash scripts in your $PATH
+	- Move the keymap file to ~/w3m/keymap
+	- Move the cgi scripts in root-cgi-bin to /usr/lib/w3m/cgi-bin
+	- Move the scripts in scripts_in_path to your $PATH
 	- the xsel program for the clipboard functionality
