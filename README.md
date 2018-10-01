@@ -49,7 +49,7 @@
 
 - This is just a part of the configuration, see the keymap file to see the
   complete list
-- see in the [functions.txt](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/documentation/functions.txt) file to see the list of functions with
+- See the [functions.txt](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/documentation/functions.txt) file to see the list of functions with
   its descriptions
 
 - This configuration in order to work needs
