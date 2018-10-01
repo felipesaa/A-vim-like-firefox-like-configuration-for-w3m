@@ -1,0 +1,2 @@
+- This files need to be in your $PATH a common election may be ~/bin
+- This files need execution permission (e.g. chmod +x copy_url.sh)
