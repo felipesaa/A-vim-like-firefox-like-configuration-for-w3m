@@ -39,7 +39,7 @@
 	- L          = Go forward in history
 	- {, }       = Move between links
 	- /          = Enter find mode
-        - n          = Find next
+	- n          = Find next
 	- N          = Find previous
 	- \*         = OPTIONS
 	- \+         = HELP
