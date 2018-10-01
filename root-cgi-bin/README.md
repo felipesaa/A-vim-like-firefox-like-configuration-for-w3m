@@ -1,0 +1,2 @@
+- This files need to be in /usr/lib/w3m/cgi-bin
+- Need execution permission (e.g. chmod +x goto_clipboard.cgi)
