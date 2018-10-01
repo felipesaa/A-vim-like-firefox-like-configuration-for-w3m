@@ -47,7 +47,7 @@
 	- C-o        = Load local file
 	- C-u        = See source code of the page
 
-- This is just a part of the configuration, see the keymap file to see the
+- This is just a part of the configuration, see the [keymap](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/keymap) file to see the
   complete list
 - See the [functions.txt](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/documentation/functions.txt) file to see the list of functions with
   its descriptions
