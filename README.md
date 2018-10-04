@@ -58,4 +58,5 @@ Some points about this configuration
 	- Move the [keymap](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/keymap) file to ~/w3m/keymap
 	- Move the cgi scripts in [root-cgi-bin](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/tree/master/root-cgi-bin) to /usr/lib/w3m/cgi-bin
 	- Move the scripts in [scripts_in_path](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/tree/master/scripts_in_path) to your $PATH
+	- Give execute permission to all the scripts
 	- the xsel program for the clipboard functionality
