@@ -8,8 +8,9 @@ Some points about this configuration
 - Many features of w3m AFAIK are not incorporated in any of these browsers, so
   the complete compatibility is not posible (e.g. BACK = delete current buffer
   and go back in history)
-- This configuration is work in process
+- This configuration is work in progresss
 - Some shortcuts
+
 	- h, j, k, l = Move the screen as a pager.
 	- Arrow keys = Move cursor
 	- w, b       = Move the cursor a word each time (forward, backward)
