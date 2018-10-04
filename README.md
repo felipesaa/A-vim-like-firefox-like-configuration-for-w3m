@@ -1,4 +1,6 @@
 # A-vim-like-firefox-like-configuration-for-w3m
+Some points about this configuration
+
 - This is a configuration for w3m that aims to be compatible with shortcuts of
   vim-like browsers, complements (e.g. dwb, VimFx) and firefox/chrome.
 - Vim-like shortcuts are preferable to firefox shortcut, So in a case that I
@@ -6,7 +8,7 @@
 - Many features of w3m AFAIK are not incorporated in any of these browsers, so
   the complete compatibility is not posible (e.g. BACK = delete current buffer
   and go back in history)
-
+- This configuration is work in process
 - Some shortcuts
 	- h, j, k, l = Move the screen as a pager.
 	- Arrow keys = Move cursor
@@ -49,8 +51,8 @@
 
 - This is just a part of the configuration, see the [keymap](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/keymap) file to see the
   complete list
-- See the [functions.txt](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/documentation/functions.txt) file to see the list of functions with
-  its descriptions
+- See the [functions.txt](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/documentation/functions.txt) file to see the list of functions and
+  their descriptions
 
 - This configuration in order to work needs
 	- Move the [keymap](https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/blob/master/keymap) file to ~/w3m/keymap
