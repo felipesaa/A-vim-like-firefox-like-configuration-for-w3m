@@ -1,10 +1,9 @@
-Order of entries in description tab
-The first entry is the default description
+Order of entries in DESCRIPTION section
+The first entry is the official description in README.func
 The second is a personal description if it is necessary
 The seemingly duplicated functions
 Examples, and tips
 Testing, pendant
-	a
 
 leyend
 	n: 		number
@@ -130,7 +129,7 @@ DOWN		- Scroll down one line
 DOWNLOAD	- Save document source to file
 		- Download source code of current page (html)
 		- Seemingly DOWNLOAD == SAVE
-		- Default save path: $HOME
+		- The download directory is where w3m was started
 		- pendant sometimes download a gzip file (without the .gz
 		  extension)
 		- If "Uncompress compressed data automatically when
@@ -186,10 +185,12 @@ EXTERN_LINK	- View current link using external browser
 		- e.g.Key EXTERN_LINK  CopyUrl.sh
 
 FRAME		- Render frame
+		- Toggle rendering HTML frames
 		- pendant. What frame?
 		- pendant. See "Render frames automatically" in OPTIONS
 
 GOTO		- Go to URL
+		- Open specified document in a new buffer
 		- Open the address bar with the url of the current page
 		- e.g.Run Goto URL: https://en.wikipedia.org/
 		- e.g.Key GOTO www.foobar.com == You will be redirected to
@@ -228,7 +229,7 @@ HELP		- View help
 		  information)
 
 HISTORY		- View history of URL
-		- Show history
+		- Show history (a list with visited url and files)
 
 INFO		- View info of current document
 		- View info of current page
@@ -236,6 +237,8 @@ INFO		- View info of current document
 
 INTERRUPT	- Stop loading document
 		- Stop w3m process and send it to the background == C-Z in bash
+		- seemingly INTERRUPT == SUSPEND
+		- To resume w3m execute in bash $ fg
 
 INIT_MAILCAP    - Reread mailcap (mainly for local-CGI)
 		- ~/.w3m/mailcap is the file where you can define the
@@ -285,7 +288,7 @@ LIST_MENU	- Popup link list menu and go to selected link
 		  tipe as a shortcut to the link
 
 LOAD		- Load local file
-		- Default path $HOME
+		- The default directory is where w3m was started
 		- In the interactive dialog "(Load)Filename?" you can use
 		  autocompletion with TAB
 		- In the interactive dialog you can use tab to alternate
@@ -304,6 +307,7 @@ MARK		- Set/unset mark
 		- pendant What is this?
 
 MARK_MID	- Mark Message-ID-like strings as anchors
+		- Turn Message-ID-like strings into hyperlinks
 		- pendant What is this?
 
 MARK_URL	- Mark URL-like strings as anchors
@@ -385,6 +389,8 @@ NEXT		- Move to next buffer
 
 NEXT_DOWN       - Move to next downward link
 
+NEXT_HALF_PAGE  -  Scroll down half a page
+
 NEXT_LEFT       - Move to next left link
 
 NEXT_LEFT_UP    - Move to next left (or upward) link
@@ -450,6 +456,8 @@ PREV		- Move to previous buffer
 		- Go back in history
 		- e.g.Run n SC == execute PREV n times
 
+PREV_HALF_PAGE  - Scroll up half a page
+
 PREV_LINK	- Move to previous link
 		- Only in LIST_MENU
 
@@ -469,7 +477,7 @@ PREV_WORD	- Move to previous word
 PRINT		- Save buffer to file
 		- Save rendered document in a file
 		- seemingly PRINT == SAVE_SCREEN
-		- The default directory is the directory where w3m was started
+		- The download directory is where w3m was started
 
 QUIT		- Quit w3m
 		- Quit w3m with confirmation
@@ -503,7 +511,7 @@ RIGHT		- Shift screen one column right
 SAVE		- Save document source to file
 		- Save document source to file (html)
 		- Seemingly DOWNLOAD == SAVE
-		- Default directory $HOME
+		- The download directory is where w3m was started
 		- Sometimes download a gzip file (without the gz extention)
 		- If "Uncompress compressed data automatically when
 		  downloading" is (YES) in "Miscellaneous Settings" in OPTIONS
@@ -567,6 +575,7 @@ SHIFT_RIGHT	- Shift screen right
 		- Move a screen to the right like Av Pag but horizontally
 
 SOURCE		- View HTML source
+		- Toggle between the source code and the rendered version
 		- Seemingly SOURCE == VIEW
 
 STOP_IMAGE	- Stop loading and drawing of images
@@ -578,7 +587,9 @@ SUBMIT		- Submit form
 		  is not visible or It is hard to find e.g., Youtube
 
 SUSPEND		- Stop loading document
-		- pendant
+		- Stop w3m process and send it to the background == C-Z in bash
+		- seemingly INTERRUPT == SUSPEND
+		- To resume w3m execute "fg" in bash
 
 TAB_GOTO	- Open URL on new tab
 		- Open editable dialog with current page link, and open in a
@@ -621,6 +632,7 @@ VERSION         - Display version of w3m
 		- e.g. w3m version w3m/0.5.3+git20170102
 
 VIEW		- View HTML source
+		- Toggle between the source code and the rendered version
 		- Seemingly SOURCE == VIEW
 
 VIEW_BOOKMARK	- View bookmark
