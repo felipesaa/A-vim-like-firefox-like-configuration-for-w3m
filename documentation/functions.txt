@@ -605,6 +605,11 @@ TAB_GOTO_RELATIVE - Open relative URL on new tab
 		- e.g.Run n SC It will load the page over the nth tab
 
 TAB_LEFT	- Move current tab left
+		- Move current tab to the left
+		- e.g.Run n SC will execute TAB_LEFT n times
+		- If n exceed the current number of positions needed to move
+		  to the first tab, the tab will move to the first tab (i.e.
+		  If you want to move to the first tab type a big number)
 
 TAB_LINK	- Open current link on new tab
 		- Open link under cursor in a new foreground tab
@@ -621,6 +626,11 @@ TAB_MOUSE	- Move to tab on mouse cursor (for mouse action)
 		- pendant
 
 TAB_RIGHT	- Move current tab right
+		- Move current tab to the right
+		- e.g.Run n SC will execute TAB_RIGHT n times
+		- If n exceed the current number of positions needed to move
+		  to the last tab, the tab will move to the last tab (i.e.
+		  If you want to move to the last tab type a big number)
 
 UNDO		- Cancel the last cursor movement
 		- Return to the last position of the cursor
