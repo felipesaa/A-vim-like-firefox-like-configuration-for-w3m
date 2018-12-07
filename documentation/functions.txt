@@ -1,10 +1,12 @@
 Order of entries in DESCRIPTION section
 The first entry is the official description in README.func
+https://raw.githubusercontent.com/tats/w3m/master/doc/README.func
 The second is a personal description if it is necessary
 The seemingly duplicated functions
 Examples, and tips
 Testing, pendant
 
+current review line 246
 leyend
         n:              number
         SC:             Execute shortcut
@@ -14,14 +16,17 @@ leyend
                         or the result of the previous execution
         e.g.Run:        example inside w3m. When w3m is runnig
         e.g.Key:        example in keymap. if the exmaple shows something like
-                        e.g.Key EXTERN_LINK  CopyUrl.sh    in the file
+                        e.g.Key EXTERN_LINK  copy_url.sh    in the file
                         ~/.w3m/keymap this should look something like
-                        keymap yf       EXTERN_LINK  CopyUrl.sh
+                        keymap yf       EXTERN_LINK  copy_url.sh
         e.g.Run/key:    example that works in the both above
         Test:           Testing to figure out what the funcitions do things
                         ignore this
         pendant:        no tested yet or it needs other revision
         nothing:        Do nothing
+
+General notes:
+- You generally can cancel/hide a menu/frozen situation with C-c
 
 FUNCTION                DESCRIPTION
 ABORT           - Quit w3m without confirmation
@@ -115,8 +120,8 @@ DICT_WORD       - Execute dictionary command (see README.dict)
 
 DICT_WORD_AT    - Execute dictionary command for word at cursor
                 - Execute dictionary command for word under the cursor
-                - e.g.Key DICT_WORD_AT 'printf %s "$0" | xsel -b' this does
-                  not work and search the word under cursor
+                - Test e.g.Key DICT_WORD_AT 'printf %s "$0" | xsel -b' this
+                  does not work and search the word under cursor
 
 DISPLAY_IMAGE   - Restart loading and drawing of images
                 - It can be used after STOP_IMAGE
@@ -177,13 +182,13 @@ EXTERN          - Execute external browser
                   number
                 - See "External Program Settings" in "Option Setting Panel" in
                   (OPTIONS)
-                - e.g.Key EXTERN     CopyUrl.sh
+                - e.g.Key EXTERN     copy_url.sh
                 - e.g.Key EXTERN     "echo -n %s | xsel -b"
 
 EXTERN_LINK     - View current link using external browser
                 - open link under cursor with sensible-browser
                 - send url under cursor to EXTERN
-                - e.g.Key EXTERN_LINK  CopyUrl.sh
+                - e.g.Key EXTERN_LINK  copy_url.sh
 
 FRAME           - Render frame
                 - Toggle rendering HTML frames
@@ -209,8 +214,8 @@ GOTO            - Go to URL
 
 GOTO_LINE       - Go to specified line
                 - Go to specified line interactively
-                - e.g.Run Goto line:n go to line number n interactively
-                - e.g.Key GOTO_LINE n  go to line number n automatically
+                - e.g.Run Goto line:n == go to line number n interactively
+                - e.g.Key GOTO_LINE n == go to line number n automatically
 
 GOTO_LINK       - Go to current link
                 - Open link under cursor in the current tab
@@ -247,11 +252,12 @@ INIT_MAILCAP    - Reread mailcap (mainly for local-CGI)
                 - Image/Gif; /usr/bin/viewnior '%s' # a mailcap entry
                 - pendant. This message appears when w3m start with this entry
                   keymap C-x INIT_MAILCAP == invalid command 'INIT_MAILCAP'
+                - pendant in NEWS  says "INIT_MAILCAP deleted, use REINIT
+                  MAILCAP instead"
 
 ISEARCH         - Incremental search forward
                 - Enter find mode
                 - Incremental search == Find as you type
-                - Seemingly ISEARCH == WHEREIS
 
 ISEARCH_BACK    - Incremental search backward
                 - Incremental search == Find as you type
@@ -300,9 +306,8 @@ LOAD            - Load local file
                   to show the files in the current directory
 
 MAIN_MENU       - Popup menu
-                - Popup menu (Contextual menu(usually right mouse))
-                - Show Context menu. It has specific option for links under the
-                  cursor
+                - Show Context menu (like the right click in firefox). It has
+                  specific option for links under the cursor
                 - Seemingly MAIN_MENU == MENU
                 - Close menu with C-c
 
@@ -325,11 +330,9 @@ MARK_WORD       - Mark current word as anchor
                   to convert
 
 MENU            - Popup menu
-                - Popup menu (Contextual menu (the equivalent in firefox to the
-                  right mouse button))
+                - Show Context menu (like the right click in firefox). It has
+                  specific option for links under the cursor
                 - seemingly MAIN_MENU == MENU
-                - Show Context menu. It has specific options for links under
-                  the cursor
                 - Close menu with C-c
 
 MENU_MOUSE      - Popup menu at mouse cursor (for mouse action)
@@ -542,6 +545,7 @@ SAVE_SCREEN     - Save rendered document to file
 
 SEARCH          - Search forward
                 - seemingly SEARCH == WHEREIS
+                - e.g.Key SEARCH keyword == search keyword autmatically
                 - pendant
 
 SEARCH_BACK     - Search backward
@@ -630,6 +634,8 @@ TAB_LINK        - Open current link on new tab
 
 TAB_MENU        - Popup tab selection menu
                 - Show Tab Menu, an interactive list of open tabs
+                - e.g.Run you can search between opened tabs while the
+                  TAB_MENU is displayed (with ISEARCH, SEARCH, etc.)
                 - SPC for select / D for delete tab
                 - from rel0.4 documentation: You can handle the menu in the
                   same way with the buffer selection menu
@@ -671,7 +677,6 @@ VIEW_IMAGE      - View image
 
 WHEREIS         - Search forward
                 - seemingly SEARCH == WHEREIS
-                - Seemingly ISEARCH == WHEREIS
                 - pendant WHEREIS shows forward: ISEARCH shows I-search:
 
 WRAP_TOGGLE     - Toggle wrap search mode
