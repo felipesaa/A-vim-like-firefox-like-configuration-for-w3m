@@ -4,25 +4,24 @@ https://raw.githubusercontent.com/tats/w3m/master/doc/README.func
 The second is a personal description if it is necessary
 The seemingly duplicated functions
 Examples, and tips
-Testing, pendant
+Testing, pending
 
 current review line 246
-leyend
+legend
         n:              number
         SC:             Execute shortcut
         n SC:           press the number, release the number, execute the
-                        shorcut
+                        shortcut
         ==:             Are the same, the meaning of the previous element
                         or the result of the previous execution
-        e.g.Run:        example inside w3m. When w3m is runnig
-        e.g.Key:        example in keymap. if the exmaple shows something like
+        e.g.Run:        example inside w3m. When w3m is running
+        e.g.Key:        example in keymap. if the example shows something like
                         e.g.Key EXTERN_LINK  copy_url.sh    in the file
                         ~/.w3m/keymap this should look something like
                         keymap yf       EXTERN_LINK  copy_url.sh
         e.g.Run/key:    example that works in the both above
-        Test:           Testing to figure out what the funcitions do things
-                        ignore this
-        pendant:        no tested yet or it needs other revision
+        Test:           Testing to figure out what the functions do
+        pending:        no tested yet or it needs other revision
         nothing:        Do nothing
 
 General notes:
@@ -33,7 +32,7 @@ ABORT           - Quit w3m without confirmation
                 - Seemingly ABORT == EXIT
 
 ACCESSSKEY      - Popup acceskey menu
-                - pendant nothing
+                - pending nothing
                 - Test keymap C-x ACCESSKEY ==print invalid command 'ACCESSSKEY'
                   at start or when keymap is reloaded with REINIT
 
@@ -44,7 +43,7 @@ ALARM           - Set alarm
                 - Execute a function each n seconds (forever)
                 - e.g.Run "(Alarm)sec command: 3 PREV" == each 3s go back in
                   history
-                - Each comand will overwrite the previous one
+                - Each command will overwrite the previous one
                 - Execute without commands to cancel previous command and do
                   nothing
 
@@ -81,7 +80,7 @@ CLOSE_TAB_MOUSE - Close tab on mouse cursor (for mouse action)
                 - This Functions can be use only in the ~/.w3m/mouse file
                 - This file is not reloaded with REINIT, so in order to reload
                   it you need to quit and enter w3m
-                - pendant inquire if the REINIT function can reload this file
+                - pending inquire if the REINIT function can reload this file
                 - Test. It does not work with tmux
 
 COMMAND         - Execute w3m command(s)
@@ -103,8 +102,8 @@ DEFAULT_CHARSET - Change the default document charset
 
 DEFINE_KEY      - Define a binding between a key stroke and a user command
                 - e.g.Run "Key definition: C-v PREV"
-                - The shortcut is available only during the current sessions
-                  (untill close)
+                - The shortcut is available only during the current session
+                  (until close)
 
 DELETE_PREVBUF  - Delete previous buffer (mainly for local-CGI)
                 - Delete previous element in history
@@ -112,7 +111,7 @@ DELETE_PREVBUF  - Delete previous buffer (mainly for local-CGI)
                   previous previous element in history
 
 DICT_WORD       - Execute dictionary command (see README.dict)
-                - Send a word interactivelly entered to the cgi script
+                - Send a word interactively entered to the cgi script
                   specified in "URL of dictionary lookup command" in "Display
                   Settings" in "Option Setting Panel (OPTIONS)"
                 - e.g.Run (dictionary)!table == search the word table
@@ -136,7 +135,7 @@ DOWNLOAD        - Save document source to file
                 - Download source code of current page (html)
                 - Seemingly DOWNLOAD == SAVE
                 - The download directory is where w3m was started
-                - pendant sometimes download a gzip file (without the .gz
+                - pending sometimes download a gzip file (without the .gz
                   extension)
                 - If "Uncompress compressed data automatically when
                   downloading" is (YES) in "Miscellaneous Settings" in OPTIONS
@@ -192,8 +191,8 @@ EXTERN_LINK     - View current link using external browser
 
 FRAME           - Render frame
                 - Toggle rendering HTML frames
-                - pendant. What frame?
-                - pendant. See "Render frames automatically" in OPTIONS
+                - pending. What frame?
+                - pending. See "Render frames automatically" in OPTIONS
 
 GOTO            - Go to URL
                 - Open specified document in a new buffer
@@ -250,9 +249,9 @@ INIT_MAILCAP    - Reread mailcap (mainly for local-CGI)
                 - ~/.w3m/mailcap is the file where you can define the
                   applications to open specif files
                 - Image/Gif; /usr/bin/viewnior '%s' # a mailcap entry
-                - pendant. This message appears when w3m start with this entry
+                - pending. This message appears when w3m start with this entry
                   keymap C-x INIT_MAILCAP == invalid command 'INIT_MAILCAP'
-                - pendant in NEWS  says "INIT_MAILCAP deleted, use REINIT
+                - pending in NEWS  says "INIT_MAILCAP deleted, use REINIT
                   MAILCAP instead"
 
 ISEARCH         - Incremental search forward
@@ -279,7 +278,7 @@ LINK_BEGIN      - Go to the first link
                 - e.g.Run n SC == go to the link number n
 
 LINK_END        - Go to the last link
-                - pendant e.g.Run n SC == strange behavior
+                - pending e.g.Run n SC == strange behavior
 
 LINK_MENU       - Popup link element menu
                 - The menu contains links contained in the section "Link
@@ -293,8 +292,8 @@ LIST            - Show all links and images
 LIST_MENU       - Popup link list menu and go to selected link
                 - Popup a menu with a list of all the links in the current page
                   and open the selected link in the current tab
-                - Each link in the list as a prefix (e.g. 1a, 3b) that you can
-                  tipe as a shortcut to the link
+                - Each link in the list has a prefix (e.g. 1a, 3b) that you can
+                  type as a shortcut to the link
 
 LOAD            - Load local file
                 - The default directory is where w3m was started
@@ -312,11 +311,11 @@ MAIN_MENU       - Popup menu
                 - Close menu with C-c
 
 MARK            - Set/unset mark
-                - pendant What is this?
+                - pending What is this?
 
 MARK_MID        - Mark Message-ID-like strings as anchors
                 - Turn Message-ID-like strings into hyperlinks
-                - pendant What is this?
+                - pending What is this?
 
 MARK_URL        - Mark URL-like strings as anchors
                 - Turn URL-like strings into hyperlinks
@@ -326,7 +325,7 @@ MARK_WORD       - Mark current word as anchor
                 - Turn current word into hyperlink
                 - If you put the cursor over this string http://www.google.com
                   over the "http" part convert http in a clickable url
-                - pendant. Find the usefulness. Find a way to specify what urls
+                - pending. Find the usefulness. Find a way to specify what urls
                   to convert
 
 MENU            - Popup menu
@@ -379,7 +378,7 @@ MOVE_RIGHT1     - Move cursor right (1 columns shift at the right edge)
 MOVE_UP         - Move cursor up (a half screen scroll at the top of screen)
                 - Move cursor left like in caret mode
 
-MOVE_UP1        - Move cursor up (1 line scrol at the top of screen)
+MOVE_UP1        - Move cursor up (1 line scroll at the top of screen)
                 - Move cursor left like in caret mode
 
 MSGS            - Display error messages
@@ -406,7 +405,7 @@ NEXT_LINK       - Move to next link
                 - only in LIST_MENU
 
 NEXT_MARK       - Move to next word
-                - pendant
+                - pending
 
 NEXT_PAGE       - Move to next page
                 - Advance one page like Av Pag
@@ -414,7 +413,7 @@ NEXT_PAGE       - Move to next page
 NEXT_RIGHT      - Move to next right link
 
 NEXT_RIGHT_DOWN - Move to next right (or downward) link
-                - e.g.Run n SC execute funcion n times
+                - e.g.Run n SC execute function n times
 
 NEXT_TAB        - Move to next tab
                 - Change focus to left tab
@@ -470,7 +469,7 @@ PREV_LINK       - Move to previous link
                 - Only in LIST_MENU
 
 PREV_MARK       - Move to previous mark
-                - pendant
+                - pending
 
 PREV_PAGE       - Move to previous page
 
@@ -501,21 +500,21 @@ READ_SHELL      - Execute shell command and load
 REDO            - Cancel the last undo
 
 REDRAW          - Redraw screen
-                - pendant
+                - pending
 
 REG_MARK        - Set mark using regexp
-                - pendant
+                - pending
 
 REINIT          - Reload configuration files
                 - It reloads: keymap, urimethodmap
-                - It does not reaload: mouse
-                - pendant complete list of files reloaded
+                - It does not reload: mouse
+                - pending complete list of files reloaded
 
 RELOAD          - Reload buffer
                 - Reload current page
 
 RESHAPE         - Re-render buffer
-                - pendant
+                - pending
                 - e.g.Key Folding lines for plain text files
                   COMMAND  "SET_OPTION fold_line=toggle ; RESHAPE"
 
@@ -526,18 +525,18 @@ SAVE            - Save document source to file
                 - Save document source to file (html)
                 - Seemingly DOWNLOAD == SAVE
                 - The download directory is where w3m was started
-                - Sometimes download a gzip file (without the gz extention)
+                - Sometimes download a gzip file (without the gz extension)
                 - If "Uncompress compressed data automatically when
                   downloading" is (YES) in "Miscellaneous Settings" in OPTIONS
                   then you will not have to uncompress the file manually
 
 SAVE_IMAGE      - Save image to file
-                - pendant
+                - pending
 
 SAVE_LINK       - Save link to file
                 - Download source code (html) of the page under cursor
                 - The default directory is the directory where w3m was started
-                - pendant, chek differences between DOWNLOAD & SAVE
+                - pending, chek differences between DOWNLOAD & SAVE
 
 SAVE_SCREEN     - Save rendered document to file
                 - seemingly PRINT == SAVE_SCREEN
@@ -546,22 +545,22 @@ SAVE_SCREEN     - Save rendered document to file
 SEARCH          - Search forward
                 - seemingly SEARCH == WHEREIS
                 - e.g.Key SEARCH keyword == search keyword autmatically
-                - pendant
+                - pending
 
 SEARCH_BACK     - Search backward
-                - pendant
+                - pending
 
 SEARCH_FORE     - Search forward
-                - pendant
+                - pending
 
 SEARCH_NEXT     - Search next regexp
-                - pendant
+                - pending
 
 SEARCH_PREV     - Search previous regexp
-                - pendant
+                - pending
 
 SELECT          - Go to buffer selection panel
-                - Go to a intecative buffer with all the histoy of the current
+                - Go to a intecative buffer with all the history of the current
                   tab
                 - e.g.Run Buffer selection mode: SPC for select / D for delete
                   buffer
@@ -572,7 +571,7 @@ SELECT_MENU     - Popup buffer selection menu
                 - Buffer selection mode: SPC for select / D for delete buffer
 
 SETENV          - Set environment variable
-                - pendant
+                - pending
 
 SET_OPTION      - Set option
                 - e.g.Key COMMAND  "SET_OPTION fold_line=toggle ; RESHAPE" ==
@@ -598,7 +597,7 @@ SOURCE          - View HTML source
 STOP_IMAGE      - Stop loading and drawing of images
 
 SUBMIT          - Submit form
-                - e.g.When you stop editing a field in a searchengine execute
+                - e.g.When you stop editing a field in a search engine execute
                   this to make the search
                 - Useful for sites where the search button (to make the search)
                   is not visible or It is hard to find e.g., Youtube
@@ -642,7 +641,7 @@ TAB_MENU        - Popup tab selection menu
                 - Close it C-c
 
 TAB_MOUSE       - Move to tab on mouse cursor (for mouse action)
-                - pendant
+                - pending
 
 TAB_RIGHT       - Move current tab right
                 - Move current tab to the right
@@ -677,7 +676,7 @@ VIEW_IMAGE      - View image
 
 WHEREIS         - Search forward
                 - seemingly SEARCH == WHEREIS
-                - pendant WHEREIS shows forward: ISEARCH shows I-search:
+                - pending WHEREIS shows forward: ISEARCH shows I-search:
 
 WRAP_TOGGLE     - Toggle wrap search mode
-                - pendant
+                - pending
