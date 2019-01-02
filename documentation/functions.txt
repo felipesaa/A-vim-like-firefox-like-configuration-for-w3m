@@ -6,14 +6,15 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 246
+current review line 323
 legend
         n:              number
-        SC:             Execute shortcut
+        SC:             Execute the shortcut associated with the function
         n SC:           press the number, release the number, execute the
                         shortcut
-        ==:             Are the same, the meaning of the previous element
-                        or the result of the previous execution
+        ==:             Are the same
+                        The meaning of the previous element
+                        The result of the previous execution
         e.g.Run:        example inside w3m. When w3m is running
         e.g.Key:        example in keymap. if the example shows something like
                         e.g.Key EXTERN_LINK  copy_url.sh    in the file
@@ -28,6 +29,7 @@ General notes:
 - You generally can cancel/hide a menu/frozen situation with C-c
 
 FUNCTION                DESCRIPTION
+
 ABORT           - Quit w3m without confirmation
                 - Seemingly ABORT == EXIT
 
@@ -130,6 +132,7 @@ DISPLAY_IMAGE   - Restart loading and drawing of images
 
 DOWN            - Scroll down one line
                 - Go up (like a pager)
+                - e.g.Run n SC == execute DOWN n times
 
 DOWNLOAD        - Save document source to file
                 - Download source code of current page (html)
@@ -248,11 +251,12 @@ INTERRUPT       - Stop loading document
 INIT_MAILCAP    - Reread mailcap (mainly for local-CGI)
                 - ~/.w3m/mailcap is the file where you can define the
                   applications to open specif files
-                - Image/Gif; /usr/bin/viewnior '%s' # a mailcap entry
+                - Image/Gif; /usr/bin/viewnior '%s' # a mailcap entry, it
+                  opens gif images with the image viewer viewnior
                 - pending. This message appears when w3m start with this entry
-                  keymap C-x INIT_MAILCAP == invalid command 'INIT_MAILCAP'
-                - pending in NEWS  says "INIT_MAILCAP deleted, use REINIT
-                  MAILCAP instead"
+                  keymap C-x INIT_MAILCAP "invalid command 'INIT_MAILCAP'"
+                - pending in the file NEWS says "INIT_MAILCAP deleted, use
+                  REINIT MAILCAP instead"
 
 ISEARCH         - Incremental search forward
                 - Enter find mode
@@ -263,6 +267,7 @@ ISEARCH_BACK    - Incremental search backward
 
 LEFT            - Shift screen one column
                 - Move screen to the left (like a pager)
+                - e.g.Run n SC == execute LEFT n times
 
 LINE_BEGIN      - Go to the beginning of line
                 - Go to the first column in the current line
@@ -278,12 +283,16 @@ LINK_BEGIN      - Go to the first link
                 - e.g.Run n SC == go to the link number n
 
 LINK_END        - Go to the last link
-                - pending e.g.Run n SC == strange behavior
+                - e.g.Run n SC == go to the link number
+                  [last link number] - [n - 1] == if you have 10 links in the
+                  current page and you use 3 SC, then you will go to the link
+                  number 8
 
 LINK_MENU       - Popup link element menu
                 - The menu contains links contained in the section "Link
                   information" of the screen printed by the INFO function
                 - You can see Stylesheets source and other things
+		- It does not work in local files
 
 LIST            - Show all links and images
                 - Show a list of all the links, anchors and images in the
@@ -294,6 +303,8 @@ LIST_MENU       - Popup link list menu and go to selected link
                   and open the selected link in the current tab
                 - Each link in the list has a prefix (e.g. 1a, 3b) that you can
                   type as a shortcut to the link
+                - e.g.Run you can search (with ISEARCH, SEARCH, etc.) while
+                  the menu is displayed
 
 LOAD            - Load local file
                 - The default directory is where w3m was started
@@ -423,6 +434,7 @@ NEXT_TAB        - Move to next tab
 
 NEXT_UP         - Move to next upward link
 
+
 NEXT_VISITED    - Move to next visited link
 
 NEXT_WORD       - Move to next word
@@ -520,6 +532,7 @@ RESHAPE         - Re-render buffer
 
 RIGHT           - Shift screen one column right
                 - Go up (like a pager)
+                - e.g.Run n SC == execute RIGHT n times
 
 SAVE            - Save document source to file
                 - Save document source to file (html)
@@ -655,6 +668,8 @@ UNDO            - Cancel the last cursor movement
 
 UP              - Scroll up one line
                 - Go up (like a pager)
+                - e.g.Run n SC == execute UP n times
+
 
 VERSION         - Display version of w3m
                 - e.g. w3m version w3m/0.5.3+git20170102
