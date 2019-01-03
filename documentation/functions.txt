@@ -6,7 +6,7 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 323
+current review line 330
 legend
         n:              number
         SC:             Execute the shortcut associated with the function
@@ -133,6 +133,7 @@ DISPLAY_IMAGE   - Restart loading and drawing of images
 DOWN            - Scroll down one line
                 - Go up (like a pager)
                 - e.g.Run n SC == execute DOWN n times
+                - e.g.Key DOWN n == execute DOWN n times
 
 DOWNLOAD        - Save document source to file
                 - Download source code of current page (html)
@@ -261,13 +262,18 @@ INIT_MAILCAP    - Reread mailcap (mainly for local-CGI)
 ISEARCH         - Incremental search forward
                 - Enter find mode
                 - Incremental search == Find as you type
+                - It supports regular expressions, so if you use the
+                  expression "wik.*fre" you can match "Wikipedia, the free"
 
 ISEARCH_BACK    - Incremental search backward
                 - Incremental search == Find as you type
+                - It supports regular expressions, so if you use the
+                  expression "wik.*fre" you can match "Wikipedia, the free"
 
 LEFT            - Shift screen one column
                 - Move screen to the left (like a pager)
                 - e.g.Run n SC == execute LEFT n times
+                - e.g.Key LEFT n == execute LEFT n times
 
 LINE_BEGIN      - Go to the beginning of line
                 - Go to the first column in the current line
@@ -357,15 +363,24 @@ MOUSE_TOGGLE    - Toggle activity of mouse
                 - Test. It does not work with tmux
 
 MOVE_DOWN       - Move cursor down (a half screen scroll at the end of screen)
-                - Move cursor down like in caret mode
+                - Move cursor down one character
+                - When you reach the border of the screen you scroll half
+                  screen
+                - e.g.Key MOVE_DOWN n == execute MOVE_DOWN n times
 
 MOVE_DOWN1      - Move cursor down (1 line scroll at the end of screen)
-                - Move cursor down like in caret mode
+                - Move cursor down one character
+                - e.g.Key MOVE_DOWN1 n == execute MOVE_DOWN1 n times
 
 MOVE_LEFT       - Move cursor left (a half screen shift at the left edge)
-                - Move cursor left like in caret mode
+                - Move cursor left one character
+                - When you reach the border of the screen you scroll half
+                  screen
+                - e.g.Key MOVE_LEFT n == execute MOVE_LEFT n times
 
 MOVE_LEFT1      - Move cursor left (1 columns shift at the left edge)
+                - Move cursor left one character
+                - e.g.Key MOVE_LEFT1 n == execute MOVE_LEFT1 n times
 
 MOVE_LIST_MENU  - Popup link list menu and move cursor to selected link
                 - Popup a menu with all the links in the current page, the
@@ -381,16 +396,24 @@ MOVE_MOUSE      - Move cursor to mouse cursor (for mouse action)
                 - Test. It does not work with tmux
 
 MOVE_RIGHT      - Move cursor right (a half screen shift at the right edge)
-                - Move cursor left like in caret mode
+                - Move cursor left one character
+                - When you reach the border of the screen you scroll half
+                  screen
+                - e.g.Key MOVE_RIGHT n == execute MOVE_RIGHT n times
 
 MOVE_RIGHT1     - Move cursor right (1 columns shift at the right edge)
-                - Move cursor left like in caret mode
+                - Move cursor left one character
+                - e.g.Key MOVE_RIGHT1 n == execute MOVE_RIGHT1 n times
 
 MOVE_UP         - Move cursor up (a half screen scroll at the top of screen)
-                - Move cursor left like in caret mode
+                - Move cursor left one character
+                - When you reach the border of the screen you scroll half
+                  screen
+                - e.g.Key MOVE_UP n == execute MOVE_UP n times
 
 MOVE_UP1        - Move cursor up (1 line scroll at the top of screen)
-                - Move cursor left like in caret mode
+                - Move cursor left one character
+                - e.g.Key MOVE_UP1 n == execute MOVE_UP1 n times
 
 MSGS            - Display error messages
                 - Display a scree with "List of error messages"
@@ -533,6 +556,7 @@ RESHAPE         - Re-render buffer
 RIGHT           - Shift screen one column right
                 - Go up (like a pager)
                 - e.g.Run n SC == execute RIGHT n times
+                - e.g.Key RIGHT n == execute RIGHT n times
 
 SAVE            - Save document source to file
                 - Save document source to file (html)
@@ -556,14 +580,21 @@ SAVE_SCREEN     - Save rendered document to file
                 - The default directory is the directory where w3m was started
 
 SEARCH          - Search forward
-                - seemingly SEARCH == WHEREIS
+                - seemingly SEARCH == WHEREIS == SEARCH_FORE
                 - e.g.Key SEARCH keyword == search keyword autmatically
+                - It supports regular expressions, so if you use the
+                  expression "wik.*fre" you can match "Wikipedia, the free"
                 - pending
 
 SEARCH_BACK     - Search backward
+                - It supports regular expressions, so if you use the
+                  expression "wik.*fre" you can match "Wikipedia, the free"
                 - pending
 
 SEARCH_FORE     - Search forward
+                - seemingly SEARCH == WHEREIS == SEARCH_FORE
+                - It supports regular expressions, so if you use the
+                  expression "wik.*fre" you can match "Wikipedia, the free"
                 - pending
 
 SEARCH_NEXT     - Search next regexp
@@ -669,6 +700,7 @@ UNDO            - Cancel the last cursor movement
 UP              - Scroll up one line
                 - Go up (like a pager)
                 - e.g.Run n SC == execute UP n times
+                - e.g.Key UP n == execute UP n times
 
 
 VERSION         - Display version of w3m
@@ -690,8 +722,7 @@ VIEW_IMAGE      - View image
                   opened with w3mimgdisplay in a new buffer in the current tab
 
 WHEREIS         - Search forward
-                - seemingly SEARCH == WHEREIS
-                - pending WHEREIS shows forward: ISEARCH shows I-search:
+                - seemingly SEARCH == WHEREIS == SEARCH_FORE
 
 WRAP_TOGGLE     - Toggle wrap search mode
                 - pending
