@@ -1,7 +1,7 @@
 # A-vim-like-firefox-like-configuration-for-w3m
 Some points about this configuration
 
-- This is a configuration for w3m that aims to be compatible with shortcuts of
+- This is a configuration for [w3m](https://sourceforge.net/projects/w3m) that aims to be compatible with shortcuts of
   vim-like browsers, complements (e.g. dwb, VimFx) and firefox/chrome.
 - Vim-like shortcuts are preferable to firefox shortcut, So in a case that I
   can only implement one I will choose vim-like
@@ -16,7 +16,7 @@ Some points about this configuration
 	- w, b       = Move the cursor a word each time (forward, backward)
 	- 0, C-a     = Move the cursor to the fist column
 	- $, C-e     = Move the cursor to the last column
-	- t, C-t     = Opent new foreground tab with in duckduckgo.com/lite
+	- t, C-t     = Open new foreground tab in duckduckgo.com/lite
 	- yt         = Duplicate current tab
 	- d, C-w     = Close current tab and save it to restore it
 	- u, C-T     = Restore last closed tab
@@ -27,7 +27,7 @@ Some points about this configuration
 	- q          = Quit w3m with confirmation
 	- ZZ         = Quit w3m without confirmation
 	- o, C-l     = Focus on address bar, open in current tab
-	- O          = Focus on addres bar open in new foreground tab
+	- O          = Focus on address bar open in new foreground tab
 	- M-o        = Open current link with external browser
 	- M-p        = Open link under cursor with external browser
 	- f, enter   = Open url under cursor in current tab
@@ -41,7 +41,7 @@ Some points about this configuration
 	- H          = Go back in history
 	- L          = Go forward in history
 	- {, }       = Move between links
-	- /          = Enter find mode
+	- /          = Enter find mode (It accepts regexp)
 	- n          = Find next
 	- N          = Find previous
 	- \*         = OPTIONS
