@@ -6,7 +6,7 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 330
+current review line 349
 legend
         n:              number
         SC:             Execute the shortcut associated with the function
@@ -262,11 +262,13 @@ INIT_MAILCAP    - Reread mailcap (mainly for local-CGI)
 ISEARCH         - Incremental search forward
                 - Enter find mode
                 - Incremental search == Find as you type
+                - As you type the first match is highlighted
                 - It supports regular expressions, so if you use the
                   expression "wik.*fre" you can match "Wikipedia, the free"
 
 ISEARCH_BACK    - Incremental search backward
                 - Incremental search == Find as you type
+                - As you type the first match is highlighted
                 - It supports regular expressions, so if you use the
                   expression "wik.*fre" you can match "Wikipedia, the free"
 
@@ -328,7 +330,9 @@ MAIN_MENU       - Popup menu
                 - Close menu with C-c
 
 MARK            - Set/unset mark
-                - pending What is this?
+                - You can navigate between marks with NEXT_MARK and PREV_MARK
+                - The character-under-the-cursor/mark is highlighted
+                - RELOAD cleans all marks
 
 MARK_MID        - Mark Message-ID-like strings as anchors
                 - Turn Message-ID-like strings into hyperlinks
@@ -336,14 +340,22 @@ MARK_MID        - Mark Message-ID-like strings as anchors
 
 MARK_URL        - Mark URL-like strings as anchors
                 - Turn URL-like strings into hyperlinks
-                - Useful for local files, plain text files with urls inside
+                - If you have a  local text file with url-like strings inside
+                  MARK_URL will convert those strings in hyperlinks you can do
+                  this automatically with url.txt
+                  $ w3m /usr/lib/w3m/cgi-bin/treat_as_url.cgi file-with-urls.txt
+                - pending. what defines "url-like"?
 
 MARK_WORD       - Mark current word as anchor
                 - Turn current word into hyperlink
-                - If you put the cursor over this string http://www.google.com
-                  over the "http" part convert http in a clickable url
+                - If you are in https://en.wikipedia.org/wiki/Internet and use
+                  MARK_WORD over the word network, it will have the following
+                  url https://en.wikipedia.org/wiki/network
                 - pending. Find the usefulness. Find a way to specify what urls
                   to convert
+                - test. If you put the cursor over this string
+                  http://www.google.com over the "http" part convert http in a
+                  clickable url
 
 MENU            - Popup menu
                 - Show Context menu (like the right click in firefox). It has
@@ -367,20 +379,24 @@ MOVE_DOWN       - Move cursor down (a half screen scroll at the end of screen)
                 - When you reach the border of the screen you scroll half
                   screen
                 - e.g.Key MOVE_DOWN n == execute MOVE_DOWN n times
+                - e.g.Run n SC == execute MOVE_DOWN n times
 
 MOVE_DOWN1      - Move cursor down (1 line scroll at the end of screen)
                 - Move cursor down one character
                 - e.g.Key MOVE_DOWN1 n == execute MOVE_DOWN1 n times
+                - e.g.Run n SC == execute MOVE_DOWN1 n times
 
 MOVE_LEFT       - Move cursor left (a half screen shift at the left edge)
                 - Move cursor left one character
                 - When you reach the border of the screen you scroll half
                   screen
                 - e.g.Key MOVE_LEFT n == execute MOVE_LEFT n times
+                - e.g.Run n SC == execute MOVE_LEFT n times
 
 MOVE_LEFT1      - Move cursor left (1 columns shift at the left edge)
                 - Move cursor left one character
                 - e.g.Key MOVE_LEFT1 n == execute MOVE_LEFT1 n times
+                - e.g.Run n SC == execute MOVE_LEFT1 n times
 
 MOVE_LIST_MENU  - Popup link list menu and move cursor to selected link
                 - Popup a menu with all the links in the current page, the
@@ -400,20 +416,24 @@ MOVE_RIGHT      - Move cursor right (a half screen shift at the right edge)
                 - When you reach the border of the screen you scroll half
                   screen
                 - e.g.Key MOVE_RIGHT n == execute MOVE_RIGHT n times
+                - e.g.Run n SC == execute MOVE_RIGHT n times
 
 MOVE_RIGHT1     - Move cursor right (1 columns shift at the right edge)
                 - Move cursor left one character
                 - e.g.Key MOVE_RIGHT1 n == execute MOVE_RIGHT1 n times
+                - e.g.Run n SC == execute MOVE_RIGHT1 n times
 
 MOVE_UP         - Move cursor up (a half screen scroll at the top of screen)
                 - Move cursor left one character
                 - When you reach the border of the screen you scroll half
                   screen
                 - e.g.Key MOVE_UP n == execute MOVE_UP n times
+                - e.g.Run n SC == execute MOVE_UP n times
 
 MOVE_UP1        - Move cursor up (1 line scroll at the top of screen)
                 - Move cursor left one character
                 - e.g.Key MOVE_UP1 n == execute MOVE_UP1 n times
+                - e.g.Run n SC == execute MOVE_UP1 n times
 
 MSGS            - Display error messages
                 - Display a scree with "List of error messages"
@@ -439,7 +459,7 @@ NEXT_LINK       - Move to next link
                 - only in LIST_MENU
 
 NEXT_MARK       - Move to next word
-                - pending
+                - Move to next mark
 
 NEXT_PAGE       - Move to next page
                 - Advance one page like Av Pag
@@ -504,7 +524,6 @@ PREV_LINK       - Move to previous link
                 - Only in LIST_MENU
 
 PREV_MARK       - Move to previous mark
-                - pending
 
 PREV_PAGE       - Move to previous page
 
@@ -538,7 +557,9 @@ REDRAW          - Redraw screen
                 - pending
 
 REG_MARK        - Set mark using regexp
-                - pending
+                - creates as many marks as matches
+                - highlight each first-character in a match
+                - You can navigate between marks with NEXT_MARK and PREV_MARK
 
 REINIT          - Reload configuration files
                 - It reloads: keymap, urimethodmap
@@ -584,7 +605,6 @@ SEARCH          - Search forward
                 - e.g.Key SEARCH keyword == search keyword autmatically
                 - It supports regular expressions, so if you use the
                   expression "wik.*fre" you can match "Wikipedia, the free"
-                - pending
 
 SEARCH_BACK     - Search backward
                 - It supports regular expressions, so if you use the
@@ -593,9 +613,9 @@ SEARCH_BACK     - Search backward
 
 SEARCH_FORE     - Search forward
                 - seemingly SEARCH == WHEREIS == SEARCH_FORE
+                - e.g.Key SEARCH keyword == search keyword autmatically
                 - It supports regular expressions, so if you use the
                   expression "wik.*fre" you can match "Wikipedia, the free"
-                - pending
 
 SEARCH_NEXT     - Search next regexp
                 - pending
@@ -723,6 +743,9 @@ VIEW_IMAGE      - View image
 
 WHEREIS         - Search forward
                 - seemingly SEARCH == WHEREIS == SEARCH_FORE
+                - e.g.Key SEARCH keyword == search keyword autmatically
+                - It supports regular expressions, so if you use the
+                  expression "wik.*fre" you can match "Wikipedia, the free"
 
 WRAP_TOGGLE     - Toggle wrap search mode
                 - pending
