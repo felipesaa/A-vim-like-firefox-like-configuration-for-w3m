@@ -6,7 +6,7 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 349
+current review line 480
 legend
         n:              number
         SC:             Execute the shortcut associated with the function
@@ -311,6 +311,8 @@ LIST_MENU       - Popup link list menu and go to selected link
                   and open the selected link in the current tab
                 - Each link in the list has a prefix (e.g. 1a, 3b) that you can
                   type as a shortcut to the link
+                - The initial position of the cursor in the menu is determined
+                  by your current position in the page
                 - e.g.Run you can search (with ISEARCH, SEARCH, etc.) while
                   the menu is displayed
 
@@ -444,25 +446,36 @@ NEW_TAB         - Open new tab
 
 NEXT            - Move to next buffer
                 - Go forward in history
-                - e.g.KEY n NEXT == execute NEXT n times
+                - e.g.Run n NEXT == execute NEXT n times
 
 NEXT_DOWN       - Move to next downward link
+                - e.g.Run n SC == execute NEXT_DOWN n times
+                - e.g.Key NEXT_DOWN n == execute NEXT_DOWN n times
 
 NEXT_HALF_PAGE  -  Scroll down half a page
+                - e.g.Run n SC == execute NEXT_HALF_PAGE n times
+                - e.g Key NEXT_HALF_PAGE == execute NEXT_HALF_PAGE n times
 
 NEXT_LEFT       - Move to next left link
+                - e.g.Run n SC == execute NEXT_LEFT n times
+                - e.g.Key NEXT_LEFT n == execute NEXT_LEFT n times
 
 NEXT_LEFT_UP    - Move to next left (or upward) link
-                - n SC == execute NEXT_LEFT_UP n times
+                - e.g.Run n SC == execute NEXT_LEFT_UP n times
+                - e.g.Key NEXT_LEFT_UP n == execute NEXT_LEFT_UP n times
 
 NEXT_LINK       - Move to next link
-                - only in LIST_MENU
+                - e.g.Run n SC == execute NEXT_LINK n times
+                - e.g Key NEXT_LINK n == execute NEXT_LINK n times
+                - test.Move to the next page in LIST_MENU
 
 NEXT_MARK       - Move to next word
                 - Move to next mark
 
 NEXT_PAGE       - Move to next page
                 - Advance one page like Av Pag
+                - e.g.Run n SC == Move the cursor to the line: current-line + n
+                - e.g.Key NEXT_PAGE n == execute NEXT_PAGE n times
 
 NEXT_RIGHT      - Move to next right link
 
@@ -521,11 +534,16 @@ PREV            - Move to previous buffer
 PREV_HALF_PAGE  - Scroll up half a page
 
 PREV_LINK       - Move to previous link
-                - Only in LIST_MENU
+                - e.g.Run n SC == execute PREV_LINK n times
+                - e.g Key PREV_LINK n == execute PREV_LINK n times
+                - test.Move to the next page in LIST_MENU
 
 PREV_MARK       - Move to previous mark
 
 PREV_PAGE       - Move to previous page
+                - Return one page like Re Pag
+                - e.g.Run n SC == Move the cursor to the line: current-line - n
+                - e.g.Key NEXT_PAGE n == execute PREV_PAGE n times
 
 PREV_TAB        - Move to previous tab
                 - Change focus to right tab
