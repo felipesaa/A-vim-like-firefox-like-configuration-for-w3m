@@ -6,7 +6,7 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 480
+current review line 533
 legend
         n:              number
         SC:             Execute the shortcut associated with the function
@@ -478,49 +478,57 @@ NEXT_PAGE       - Move to next page
                 - e.g.Key NEXT_PAGE n == execute NEXT_PAGE n times
 
 NEXT_RIGHT      - Move to next right link
+                - e.g.Run n SC == execute NEXT_RIGHT n times
+                - e.g.Key NEXT_LEFT n == execute NEXT_RIGHT n times
 
 NEXT_RIGHT_DOWN - Move to next right (or downward) link
-                - e.g.Run n SC execute function n times
+                - e.g.Run n SC == execute NEXT_RIGHT_DOWN n times
+                - e.g.Key NEXT_RIGHT_DOWN n == execute NEXT_RIGHT_DOWN n times
 
 NEXT_TAB        - Move to next tab
                 - Change focus to left tab
-                - When you come to the last tab and execute NEXT_TAB you move
-                  the focus to the first tab
-                - e.g.Run n SC execute NEXT_TAB n times
+                - When the focus is on the rightmost tab and execute NEXT_TAB
+                  you move the focus to the leftmost tab
+                - e.g.Run n SC == execute NEXT_TAB n times
 
 NEXT_UP         - Move to next upward link
-
+                - e.g.Run n SC == execute NEXT_UP n times
+                - e.g.Key NEXT_UP n == execute NEXT_UP n times
 
 NEXT_VISITED    - Move to next visited link
 
 NEXT_WORD       - Move to next word
-                - Move to the next word
+                - Move to the cursor to first character of next word
                 - e.g.Run n SC == execute NEXT_WORD n times
+                - e.g.Key NEXT_WORD n == execute NEXT_WORD n times
 
 NOTHING         - Do nothing
-                - Do nothing
                 - seemingly NOTHING == NULL
 
 NULL            - Do nothing
-                - Do nothing
                 - seemingly NOTHING == NULL
 
 OPTIONS         - Option setting panel
                 - A interactive screen with many options to configure
-                - It is a nicer way to configure the ~/.w3m/config file
+                - It is a nicer way (it has comments and is divided by
+                  sections) to configure the ~/.w3m/config file
 
 PEEK            - Peek current URL
                 - Show current page url
 
 PEEK_IMG        - Peek image URL
-                - Show image-only url under cursor
+                - Show url under cursor (only urls of images)
+                - pending. the urls shown with PEEK_IMG are not the same than
+                  PEEK_LINK's
 
 PEEK_LINK       - Peek link URL
-                - Show link under cursor (images included)
+                - Show url under cursor (images included)
 
 PIPE_BUF        - Send rendered document to pipe
+                - Some shortcuts still work after the piping
                 - e.g.Run "Pipe buffer to: less" to navigate the rendered
                   document with less, to go back execute PREV
+                - e.g.Key PIPE_BUF less == pipe rendered document to less
 
 PIPE_SHELL      - Execute shell command and browse
                 - Print output of a shell command in a new buffer
