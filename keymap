@@ -270,11 +270,6 @@ keymap {        NEXT_LEFT_UP
 #Move cursor to next right or downward link/n} execute the function n times
 keymap }        NEXT_RIGHT_DOWN
 #TAB/Shift+TAB move cursor to next/previous link respectively
-#Only in LIST_MENU
-#keymap C-n      NEXT_LINK					#Next link
-#keymap TAB      NEXT_LINK					#Next link
-#keymap C-p      PREV_LINK					#Previous link
-#keymap ESC-TAB  PREV_LINK					#Previous link
 
 #-history navigation...........................................................
 keymap L        NEXT						#Go forward in history
