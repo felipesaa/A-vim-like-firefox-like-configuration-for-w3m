@@ -6,7 +6,7 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 533
+current review line 589
 legend
         n:              number
         SC:             Execute the shortcut associated with the function
@@ -467,7 +467,7 @@ NEXT_LEFT_UP    - Move to next left (or upward) link
 NEXT_LINK       - Move to next link
                 - e.g.Run n SC == execute NEXT_LINK n times
                 - e.g Key NEXT_LINK n == execute NEXT_LINK n times
-                - test.Move to the next page in LIST_MENU
+                - test. Move to the next page in LIST_MENU
 
 NEXT_MARK       - Move to next word
                 - Move to next mark
@@ -498,7 +498,7 @@ NEXT_UP         - Move to next upward link
 NEXT_VISITED    - Move to next visited link
 
 NEXT_WORD       - Move to next word
-                - Move to the cursor to first character of next word
+                - Move the cursor to first character of next word
                 - e.g.Run n SC == execute NEXT_WORD n times
                 - e.g.Key NEXT_WORD n == execute NEXT_WORD n times
 
@@ -525,7 +525,7 @@ PEEK_LINK       - Peek link URL
                 - Show url under cursor (images included)
 
 PIPE_BUF        - Send rendered document to pipe
-                - Some shortcuts still work after the piping
+                - Pipe rendered-document and print output in a new buffer
                 - e.g.Run "Pipe buffer to: less" to navigate the rendered
                   document with less, to go back execute PREV
                 - e.g.Key PIPE_BUF less == pipe rendered document to less
@@ -534,12 +534,15 @@ PIPE_SHELL      - Execute shell command and browse
                 - Print output of a shell command in a new buffer
                 - Seemingly PIPE_SHELL == READ_SHELL
                 - e.g.Run (read shell[pipe])!ls to go back execute PREV
+                - e.g.Key PIPE_SHELL ls == execute ls automatically
 
 PREV            - Move to previous buffer
                 - Go back in history
                 - e.g.Run n SC == execute PREV n times
 
 PREV_HALF_PAGE  - Scroll up half a page
+                - e.g.Run n SC == execute PREV_HALF_PAGE n times
+                - e.g.Key PREV_HALF_PAGE n == execute PREV_HALF_PAGE n times
 
 PREV_LINK       - Move to previous link
                 - e.g.Run n SC == execute PREV_LINK n times
@@ -555,19 +558,24 @@ PREV_PAGE       - Move to previous page
 
 PREV_TAB        - Move to previous tab
                 - Change focus to right tab
-                - When you come to the last tab and execute NEXT_TAB you move
-                  the focus to the first tab
-                - e.g.Run n SC execute PREV_TAB n times
+                - When the focus is on the leftmost tab and execute PREV_TAB
+                  you move the focus to the rightmost tab
+                - e.g.Run n SC == execute PREV_TAB n times
+
 
 PREV_VISITED    - Move to previous visited link
 
 PREV_WORD       - Move to previous word
-                - n PREV_WORD == execute PREV_WORD n times
+                - Move the cursor to first character of previous word
+                - e.g.Run n SC == execute PREV_WORD n times
+                - e.g.Key PREV_WORD n == execute PREV_WORD n times
 
 PRINT           - Save buffer to file
-                - Save rendered document in a file
+                - Save rendered document as a file
                 - seemingly PRINT == SAVE_SCREEN
                 - The download directory is where w3m was started
+                - e.g.Key PRINT name.txt == save rendered document
+                  automatically with the name "name.txt"
 
 QUIT            - Quit w3m
                 - Quit w3m with confirmation
@@ -576,6 +584,7 @@ READ_SHELL      - Execute shell command and load
                 - Print output of a shell command in a new buffer
                 - Seemingly PIPE_SHELL == READ_SHELL
                 - e.g.Run (read shell[pipe])!ls to go back execute PREV
+                - e.g.Key PIPE_SHELL ls == execute ls automatically
 
 REDO            - Cancel the last undo
 
@@ -623,8 +632,11 @@ SAVE_LINK       - Save link to file
                 - pending, chek differences between DOWNLOAD & SAVE
 
 SAVE_SCREEN     - Save rendered document to file
+                - Save rendered document as a file
                 - seemingly PRINT == SAVE_SCREEN
-                - The default directory is the directory where w3m was started
+                - The download directory is where w3m was started
+                - e.g.Key PRINT name.txt == save rendered document
+                  automatically with the name "name.txt"
 
 SEARCH          - Search forward
                 - seemingly SEARCH == WHEREIS == SEARCH_FORE
