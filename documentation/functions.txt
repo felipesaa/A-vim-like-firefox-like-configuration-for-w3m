@@ -6,7 +6,7 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 589
+current review line 624
 legend
         n:              number
         SC:             Execute the shortcut associated with the function
@@ -587,9 +587,13 @@ READ_SHELL      - Execute shell command and load
                 - e.g.Key PIPE_SHELL ls == execute ls automatically
 
 REDO            - Cancel the last undo
+                - This operates on the cursor position
+                - e.g.Run SC n == execute REDO n times
+                - pending. find out if this works in other situations (other
+                  than cursor position)
 
 REDRAW          - Redraw screen
-                - pending
+                - pending. What is this?, when is useful?
 
 REG_MARK        - Set mark using regexp
                 - creates as many marks as matches
@@ -597,17 +601,20 @@ REG_MARK        - Set mark using regexp
                 - You can navigate between marks with NEXT_MARK and PREV_MARK
 
 REINIT          - Reload configuration files
-                - It reloads: keymap, urimethodmap
+                - It reloads: keymap, urimethodmap, siteconf, mailcap, config,
+                  menu
                 - It does not reload: mouse
-                - pending complete list of files reloaded
+                - pending. list all the files reloaded/not-reloaded (cookie
+                  ,history)
 
 RELOAD          - Reload buffer
                 - Reload current page
 
 RESHAPE         - Re-render buffer
-                - pending
+                - It removes all marks
                 - e.g.Key Folding lines for plain text files
                   COMMAND  "SET_OPTION fold_line=toggle ; RESHAPE"
+                - pending.
 
 RIGHT           - Shift screen one column right
                 - Go up (like a pager)
@@ -754,6 +761,9 @@ TAB_RIGHT       - Move current tab right
 
 UNDO            - Cancel the last cursor movement
                 - Return to the last position of the cursor
+                - e.g.Run SC n == execute UNDO n times
+                - pending. find out if this works in other situations (other
+                  than cursor position)
 
 UP              - Scroll up one line
                 - Go up (like a pager)
