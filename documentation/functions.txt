@@ -6,7 +6,7 @@ The seemingly duplicated functions
 Examples, and tips
 Testing, pending
 
-current review line 624
+current review line 673
 legend
         n:              number
         SC:             Execute the shortcut associated with the function
@@ -139,8 +139,8 @@ DOWNLOAD        - Save document source to file
                 - Download source code of current page (html)
                 - Seemingly DOWNLOAD == SAVE
                 - The download directory is where w3m was started
-                - pending sometimes download a gzip file (without the .gz
-                  extension)
+                - Sometimes the downloaded file does not have extension
+                  (gz, html, etc.)
                 - If "Uncompress compressed data automatically when
                   downloading" is (YES) in "Miscellaneous Settings" in OPTIONS
                   then you will not have to uncompress the file manually
@@ -263,14 +263,14 @@ ISEARCH         - Incremental search forward
                 - Enter find mode
                 - Incremental search == Find as you type
                 - As you type the first match is highlighted
-                - It supports regular expressions, so if you use the
-                  expression "wik.*fre" you can match "Wikipedia, the free"
+                - It supports regular expressions, so the expression "wik.*fre"
+                  will match "Wikipedia, the free"
 
 ISEARCH_BACK    - Incremental search backward
                 - Incremental search == Find as you type
                 - As you type the first match is highlighted
-                - It supports regular expressions, so if you use the
-                  expression "wik.*fre" you can match "Wikipedia, the free"
+                - It supports regular expressions, so the expression "wik.*fre"
+                  will match "Wikipedia, the free"
 
 LEFT            - Shift screen one column
                 - Move screen to the left (like a pager)
@@ -571,7 +571,7 @@ PREV_WORD       - Move to previous word
                 - e.g.Key PREV_WORD n == execute PREV_WORD n times
 
 PRINT           - Save buffer to file
-                - Save rendered document as a file
+                - Save rendered document as a text file
                 - seemingly PRINT == SAVE_SCREEN
                 - The download directory is where w3m was started
                 - e.g.Key PRINT name.txt == save rendered document
@@ -622,51 +622,53 @@ RIGHT           - Shift screen one column right
                 - e.g.Key RIGHT n == execute RIGHT n times
 
 SAVE            - Save document source to file
-                - Save document source to file (html)
+                - Download source code of current page (html)
                 - Seemingly DOWNLOAD == SAVE
                 - The download directory is where w3m was started
-                - Sometimes download a gzip file (without the gz extension)
+                - Sometimes the downloaded file does not have extension
+                  (gz, html, etc.)
                 - If "Uncompress compressed data automatically when
                   downloading" is (YES) in "Miscellaneous Settings" in OPTIONS
                   then you will not have to uncompress the file manually
 
 SAVE_IMAGE      - Save image to file
-                - pending
+                - The download directory is where w3m was started
 
 SAVE_LINK       - Save link to file
-                - Download source code (html) of the page under cursor
+                - Download source code (html) of the link under cursor
                 - The default directory is the directory where w3m was started
-                - pending, chek differences between DOWNLOAD & SAVE
+                - Sometimes the downloaded file does not have extension
+                  (gz, html, etc.)
 
 SAVE_SCREEN     - Save rendered document to file
-                - Save rendered document as a file
+                - Save rendered document as a text file
                 - seemingly PRINT == SAVE_SCREEN
                 - The download directory is where w3m was started
                 - e.g.Key PRINT name.txt == save rendered document
                   automatically with the name "name.txt"
 
 SEARCH          - Search forward
-                - seemingly SEARCH == WHEREIS == SEARCH_FORE
-                - e.g.Key SEARCH keyword == search keyword autmatically
-                - It supports regular expressions, so if you use the
-                  expression "wik.*fre" you can match "Wikipedia, the free"
+                - seemingly SEARCH  == SEARCH_FORE == WHEREIS
+                - e.g.Key SEARCH keyword == search keyword automatically
+                - It supports regular expressions, so the expression "wik.*fre"
+                  will match "Wikipedia, the free"
 
 SEARCH_BACK     - Search backward
-                - It supports regular expressions, so if you use the
-                  expression "wik.*fre" you can match "Wikipedia, the free"
-                - pending
+                - It supports regular expressions, so the expression "wik.*fre"
+                  will match "Wikipedia, the free"
+                - SEARCH_NEXT and SEARCH_PREV will go backwards
 
 SEARCH_FORE     - Search forward
-                - seemingly SEARCH == WHEREIS == SEARCH_FORE
-                - e.g.Key SEARCH keyword == search keyword autmatically
-                - It supports regular expressions, so if you use the
-                  expression "wik.*fre" you can match "Wikipedia, the free"
+                - seemingly SEARCH  == SEARCH_FORE == WHEREIS
+                - e.g.Key SEARCH keyword == search keyword automatically
+                - It supports regular expressions, so the expression "wik.*fre"
+                  will match "Wikipedia, the free"
 
 SEARCH_NEXT     - Search next regexp
-                - pending
+                - Move cursor to next match
 
 SEARCH_PREV     - Search previous regexp
-                - pending
+                - Move cursor to previous match
 
 SELECT          - Go to buffer selection panel
                 - Go to a intecative buffer with all the history of the current
@@ -790,10 +792,10 @@ VIEW_IMAGE      - View image
                   opened with w3mimgdisplay in a new buffer in the current tab
 
 WHEREIS         - Search forward
-                - seemingly SEARCH == WHEREIS == SEARCH_FORE
-                - e.g.Key SEARCH keyword == search keyword autmatically
-                - It supports regular expressions, so if you use the
-                  expression "wik.*fre" you can match "Wikipedia, the free"
+                - seemingly SEARCH  == SEARCH_FORE == WHEREIS
+                - e.g.Key SEARCH keyword == search keyword automatically
+                - It supports regular expressions, so the expression "wik.*fre"
+                  will match "Wikipedia, the free"
 
 WRAP_TOGGLE     - Toggle wrap search mode
                 - pending
