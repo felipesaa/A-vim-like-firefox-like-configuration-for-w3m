@@ -1,0 +1,43 @@
+table borders in w3m
+
+go to OPTIONS(default shortcut o)>Display Settings
+and set the following entries like this
+
+Character type for border of table and menu             [charset specific    ]
+Display table borders, ignore value of BORDER           (*)YES  ( )NO
+
+
+examples of https://news.ycombinator.com/
+
+result with "charset specific" or "DEC special graphics"
+      ┌─────────────────────────────────────────────────────────────────────┐
+      │┌─┬───────────────────────────────────────────────────────────┬─────┐│
+      ││●│Hacker News new | past | comments | ask | show | jobs |    │login││
+      ││ │submit                                                     │     ││
+      │└─┴───────────────────────────────────────────────────────────┴─────┘│
+      ├─────────────────────────────────────────────────────────────────────┤
+      ├─────────────────────────────────────────────────────────────────────┤
+      │┌───┬─┬─────────────────────────────────────────────────────────────┐│
+      ││ 1.│ │Salesforce is buying Tableau for $15.7B (techcrunch.com)     ││
+      │├───┴─┼─────────────────────────────────────────────────────────────┤│
+      ││     │309 points by albertwang 3 hours ago | hide | 89 comments    ││
+      │├───┬─┼─────────────────────────────────────────────────────────────┤│
+
+result with "ASCII"
+      +---------------------------------------------------------------------+
+      |+-------------------------------------------------------------------+|
+      ||#|Hacker News new | past | comments | ask | show | jobs |    |login||
+      || |submit                                                     |     ||
+      |+-------------------------------------------------------------------+|
+      |---------------------------------------------------------------------|
+      |---------------------------------------------------------------------|
+      |+-------------------------------------------------------------------+|
+      || 1.| |Salesforce is buying Tableau for $15.7B (techcrunch.com)     ||
+      ||-----+-------------------------------------------------------------||
+      ||     |309 points by albertwang 3 hours ago | hide | 89 comments    ||
+      ||-----+-------------------------------------------------------------||
+
+result with "(*)NO" (default)
+      ● Hacker News new | past | comments | ask | show | jobs | submit  login
+       1.   Salesforce is buying Tableau for $15.7B (techcrunch.com)
+            300 points by albertwang 3 hours ago | hide | 89 comments
