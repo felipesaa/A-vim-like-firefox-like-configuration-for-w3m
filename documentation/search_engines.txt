@@ -1,0 +1,66 @@
+ Searchengines
+
+The ideal is the behavior of the "Smart keywords" in Firefox [0] [1]
+In the location bar you can start a search with a keyword and a search string
+e.g., "w chair" will search "https://en.wikipedia.org/wiki/Chair"
+the entries that define this behavior are in the Firefox bookmarks in the
+following way
+
+Name:		Search Wikipedia, the free encyclopedia
+Location:	https://en.wikipedia.org/w/index.php?search=%s&title=Special%3ASearch
+Tags:
+Keyword:	w
+Description:
+
+This file show my findings in how to get the closest behavior.
+
+Best solution right now: 2
+
+1.
+- Use https://duckduckgo.com/lite/ with bangs [2] [3]
+  - duckduckgo bangs
+    e.g., "!w chair" it will search "https://en.wikipedia.org/wiki/Chair"
+  - This method is worse than "the ideal" because:
+    - You need to go to duckduckgo.com first
+    - The search goes through duckduckgo (bangs) instead of directly
+    - Bangs are not user defined.
+
+2.
+- Use ~/.w3m/cgi-bin/search_engines.cgi script and ~/.w3m/urimethodmap file
+  - You need to open the location bar e.g., using GOTO or TAB_GOTO, clear
+    the field (ctrl+u) and then input [KEYWORD]:[THE-SEARCH-TERM]
+    e.g., w:chair will send you to "https://en.wikipedia.org/wiki/Chair"
+  - The location bar doesn't allow spaces, so in order to separate words in the
+    search this script has a subtitution that converts hyphens () to "%20" the
+    equivalent string to a space in URL encoding
+    e.g., y:the-curse-of-issyos-gameplay
+  - You can add/edit search engines modifying the files search_engines.cgi and
+    urimethodmap
+  - The search can be made directly to the site (not with duckduckgo bangs)
+  - Or you can use duckduckgo bangs e.g., d:yt!-gaming will search "gaming" in
+    youtube throught duckduckgo
+  - This method is worse than "the ideal" because:
+    - You need to create a subtitution to add spaces
+    - Duckduckgo results go through a duckduckgo redirection instead of
+      directly
+    - The keywords plus colon are treated as url inside the page
+      e.g, the keyword "s:" in the prase "Links:"
+
+ TODO
+
+- Look a way to use surfraw inside w3m
+- use DICT_WORD (it allow spaces)
+- bug. In 2. when you search d:yt!-multi-word-string it will search in youtube
+  with the hypens included instead of using spaces
+- Searches made in duckduckgo.com/lite/ do not alter the url
+  Searches made with 2. or surfraw in duckduckgo alter the url
+  The format of the results in duckduckgo.com/lite are better
+  guess.solution: maybe some user agent string
+- It is possible to create a pop-up menu like the vomnibar of vimium?
+
+ Sources
+
+[0] https://support.mozilla.org/en-US/kb/how-search-from-address-bar?redirectlocale=en-US&redirectslug=Smart+keywords
+[1] http://kb.mozillazine.org/Using_keyword_searches
+[2] https://duckduckgo.com/bang
+[3] https://duckduckgo.com/bang_lite.html
