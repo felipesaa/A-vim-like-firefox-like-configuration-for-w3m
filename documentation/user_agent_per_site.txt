@@ -1,0 +1,10 @@
+My findings in how to define user-agent per site
+
+1.
+- Open different sessions of w3m with different config files
+  - use $ w3m -B -config [FILE]
+  - in the line user_agent add your personalized user agent
+  - This method is worse than the ideal because
+    - It is user agent per session
+
+http://sachachua.com/blog/2008/08/emacs-and-w3m-fake-your-user-agent/
